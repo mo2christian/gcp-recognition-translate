@@ -53,7 +53,10 @@ public class TranslateController {
         response.setLanguage(request.getTarget());
         //publier les textes traduits
         StringBuilder builder = new StringBuilder();
-        request.getWords().forEach(s -> builder.append(s + ":"));
+        builder.append(request.getWords().get(0));
+        for (int i = 1; i < request.getWords().size(); i++){
+            builder.append(":" + request.getWords().get(i));
+        }
         publishService.publish(builder.toString());
         return response;
     }
