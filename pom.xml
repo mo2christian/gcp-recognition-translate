@@ -39,11 +39,6 @@
 		</dependency>
 		<dependency>
 			<groupId>com.google.cloud</groupId>
-			<artifactId>google-cloud-datastore</artifactId>
-			<version>${gcp.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.google.cloud</groupId>
 			<artifactId>google-cloud-translate</artifactId>
 			<version>${gcp.version}</version>
 		</dependency>

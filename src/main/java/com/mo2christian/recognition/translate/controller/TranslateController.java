@@ -34,10 +34,11 @@ public class TranslateController {
      * URL de ping, pour verifier la disponibilité du service.
      * @return
      */
-    @RequestMapping("/")
+    @RequestMapping({"/", "/_ah/start"})
     public ResponseEntity<String> index(){
         return ResponseEntity.ok("OK");
     }
+
 
     /**
      * URL de traduction.
