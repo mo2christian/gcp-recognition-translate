@@ -1,0 +1,79 @@
+swagger: "2.0"
+info:
+  description: "Translate API."
+  version: "0.1.1"
+  title: "Translate API"
+  termsOfService: "http://swagger.io/terms/"
+  contact:
+    email: "nmomochristian@gmail.com"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+host: "translate.endpoints.recognition-218419.cloud.goog"
+x-google-endpoints:
+  - name: "translate.endpoints.recognition-218419.cloud.goog"
+    target: "35.186.238.119"
+basePath: "/"
+schemes:
+- "http"
+paths:
+  /healthz:
+    get:
+      summary: "Health check"
+      description: "Health check path"
+      operationId: "healthcheck"
+      consumes:
+      - "text/*"
+      produces:
+      - "text/*"
+      responses:
+        200:
+          description: "Application alive"
+        404:
+          description: "Application dead"
+  /do:
+    post:
+      summary: "Translate a text from language to another"
+      description: "Translate a text from language to another"
+      operationId: "translate"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "translateRequest"
+        description: "Translate request"
+        required: true
+        schema:
+          $ref: "#/definitions/translateRequest"
+      responses:
+        200:
+          description: "Successful translation"
+          schema:
+            $ref: "#/definitions/translateResponse"
+        405:
+          description: "Invalid input"
+        500:
+          description: "Error while translating"
+definitions:
+  translateRequest:
+    type: "object"
+    properties:
+      from:
+        type: "string"
+      target:
+        type: "string"
+      words:
+        type: "array"
+        items:
+          type: "string"
+  translateResponse:
+    type: "object"
+    properties:
+      language:
+        type: "string"
+      words:
+        type: "array"
+        items:
+          type: "string"

@@ -34,7 +34,7 @@ public class TranslateController {
      * URL de ping, pour verifier la disponibilité du service.
      * @return
      */
-    @RequestMapping({"/", "/_ah/start"})
+    @RequestMapping({"/healthz", "/_ah/start"})
     public ResponseEntity<String> index(){
         return ResponseEntity.ok("OK");
     }
@@ -45,7 +45,7 @@ public class TranslateController {
      * @param request
      * @return
      */
-    @RequestMapping(value = "/", method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
+    @RequestMapping(value = "/do", method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
     @ResponseBody
     public Response translate(@RequestBody Request request){
         // traduire les texts

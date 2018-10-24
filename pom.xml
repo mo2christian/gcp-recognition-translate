@@ -5,11 +5,11 @@
 
 	<groupId>com.mo2christian.recognition</groupId>
 	<artifactId>recognition-translate</artifactId>
-	<version>0.1.0</version>
-	<packaging>war</packaging>
+	<version>0.1.2.2</version>
+	<packaging>jar</packaging>
 
 	<name>translate</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Translate API</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -23,19 +23,12 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
 		<gcp.version>1.39.0</gcp.version>
-		<appengine-sdk.version>1.9.64</appengine-sdk.version>
 	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
-			<exclusions>
-				<exclusion>
-					<groupId>org.springframework.boot</groupId>
-					<artifactId>spring-boot-starter-tomcat</artifactId>
-				</exclusion>
-			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>com.google.cloud</groupId>
@@ -47,22 +40,6 @@
 			<artifactId>google-cloud-pubsub</artifactId>
 			<version>${gcp.version}</version>
 		</dependency>
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>javax.servlet-api</artifactId>
-			<version>3.1.0</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.google.appengine</groupId>
-			<artifactId>appengine-api-1.0-sdk</artifactId>
-			<version>${appengine-sdk.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>jul-to-slf4j</artifactId>
-			<scope>provided</scope>
-		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -72,20 +49,8 @@
 	</dependencies>
 
 	<build>
+		<finalName>translate</finalName>
 		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-			<plugin>
-				<groupId>com.google.cloud.tools</groupId>
-				<artifactId>appengine-maven-plugin</artifactId>
-				<version>1.3.2</version>
-				<configuration>
-					<devserver.host>0.0.0.0</devserver.host>
-					<devserver.port>8080</devserver.port>
-				</configuration>
-			</plugin>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
