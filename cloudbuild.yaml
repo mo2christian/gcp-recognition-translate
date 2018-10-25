@@ -1,5 +1,5 @@
 steps:
-- name: 'gcr.io/cloud-builders/mvn'
+- name: 'gcr.io/recognition-218419/mvn'
   args: ['clean', 'package']
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'eu.gcr.io/$PROJECT_ID/recognition-translate:${_VERSION}', '-t', 'eu.gcr.io/$PROJECT_ID/recognition-translate:latest', '.']
@@ -17,6 +17,6 @@ steps:
     - 'CLOUDSDK_COMPUTE_ZONE=europe-west2-a'
     - 'CLOUDSDK_CONTAINER_CLUSTER=reko-cluster'
 substitutions:
-  _VERSION: 0.1.2.4
+  _VERSION: 0.1.2.5
 timeout: 600s
 tags: ['recognition', 'translate']
