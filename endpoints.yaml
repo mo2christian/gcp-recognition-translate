@@ -1,7 +1,7 @@
 swagger: "2.0"
 info:
   description: "Translate API."
-  version: "0.1.1"
+  version: "0.1.2"
   title: "Translate API"
   termsOfService: "http://swagger.io/terms/"
   contact:
@@ -9,13 +9,13 @@ info:
   license:
     name: "Apache 2.0"
     url: "http://www.apache.org/licenses/LICENSE-2.0.html"
-host: "translate.endpoints.recognition-218419.cloud.goog"
+host: "translate.just2teach.com"
 x-google-endpoints:
-  - name: "translate.endpoints.recognition-218419.cloud.goog"
+  - name: "translate.just2teach.com"
     target: "35.186.238.119"
 basePath: "/"
 schemes:
-- "http"
+- "https"
 paths:
   /healthz:
     get:

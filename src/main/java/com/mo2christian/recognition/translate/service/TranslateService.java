@@ -29,6 +29,9 @@ public class TranslateService {
      */
     public List<String> translate(String from, String target, List<String> texts){
         logger.info("Translating text " + texts + " from " + from + " to " + target);
+        if (from.equalsIgnoreCase(target)){
+            return texts;
+        }
         Translate translate = TranslateOptions.getDefaultInstance().getService();
         List<Translation> translations = translate.translate(texts,
                 Translate.TranslateOption.sourceLanguage(from),
