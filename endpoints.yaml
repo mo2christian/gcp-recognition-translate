@@ -1,7 +1,7 @@
 swagger: "2.0"
 info:
   description: "Translate API."
-  version: "0.1.2"
+  version: "0.1.4"
   title: "Translate API"
   termsOfService: "http://swagger.io/terms/"
   contact:
@@ -56,6 +56,9 @@ paths:
           description: "Invalid input"
         500:
           description: "Error while translating"
+      security:
+      - api_key: []
+      - google_iap_token: []
 definitions:
   translateRequest:
     type: "object"
@@ -77,3 +80,15 @@ definitions:
         type: "array"
         items:
           type: "string"
+securityDefinitions:
+  google_iap_token:
+    authorizationUrl: ""
+    flow: "implicit"
+    type: "oauth2"
+    x-google-issuer: "https://cloud.google.com/iap"
+    x-google-jwks_uri: "https://www.gstatic.com/iap/verify/public_key-jwk"
+    x-google-audiences: "/projects/50295857426/global/backendServices/3467373391457578740"
+  api_key:
+    type: "apiKey"
+    name: "key"
+    in: "query"
