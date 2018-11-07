@@ -1,6 +1,6 @@
 swagger: "2.0"
 info:
-  description: "Translate API."
+  description: "Implementation of translating text from a language to another"
   version: "0.1.4"
   title: "Translate API"
   termsOfService: "http://swagger.io/terms/"
