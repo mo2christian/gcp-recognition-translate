@@ -1,7 +1,7 @@
 swagger: "2.0"
 info:
   description: "Implementation of translating text from a language to another"
-  version: "0.1.4"
+  version: "0.1.5"
   title: "Translate API"
   termsOfService: "http://swagger.io/terms/"
   contact:
@@ -12,7 +12,7 @@ info:
 host: "translate.just2teach.com"
 x-google-endpoints:
   - name: "translate.just2teach.com"
-    target: "35.186.238.119"
+    target: "35.244.153.214"
 basePath: "/"
 schemes:
 - "https"
@@ -58,7 +58,6 @@ paths:
           description: "Error while translating"
       security:
       - api_key: []
-      - google_iap_token: []
 definitions:
   translateRequest:
     type: "object"

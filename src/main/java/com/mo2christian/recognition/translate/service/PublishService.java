@@ -27,7 +27,7 @@ public class PublishService {
     @PostConstruct
     public void construct() throws IOException {
         logger.info("Initializing publisher");
-        ProjectTopicName topicName = ProjectTopicName.of(System.getenv("GOOGLE_CLOUD_PROJECT"), "translate");
+        ProjectTopicName topicName = ProjectTopicName.of(System.getenv("GOOGLE_CLOUD_PROJECT"), System.getenv("TOPIC"));
         publisher = Publisher.newBuilder(topicName).build();
     }
 

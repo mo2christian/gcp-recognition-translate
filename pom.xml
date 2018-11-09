@@ -5,7 +5,7 @@
 
 	<groupId>com.mo2christian.recognition</groupId>
 	<artifactId>recognition-translate</artifactId>
-	<version>0.1.2.7</version>
+	<version>0.1.2.8</version>
 	<packaging>jar</packaging>
 
 	<name>translate</name>
