@@ -55,7 +55,7 @@ spec:
         - name: GOOGLE_APPLICATION_CREDENTIALS
           value: "/etc/creds/reko.json"
         - name: GOOGLE_CLOUD_PROJECT
-          value: "recognition-218419"
+          value: "XXXXXXXXXXX"
         - name: TOPIC
           value: "reko-recorder"
         volumeMounts:
