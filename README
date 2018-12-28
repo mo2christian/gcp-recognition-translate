@@ -1,0 +1,12 @@
+API pour la traduction d'un text
+
+Déployé sur le Google CLOUD, il utilise:
+
+
+- Cloud Endpoint pour l'exposition de l'API
+- Kubernetes
+- Cloud build pour le continue deployement
+- Cloud translate API pour la traduction des textes
+
+
+API servant de POC pour le test de ces services.
